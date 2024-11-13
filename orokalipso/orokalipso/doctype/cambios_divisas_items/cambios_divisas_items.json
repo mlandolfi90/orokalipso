@@ -1,0 +1,129 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-02 09:43:22.456531",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "informacion_de_la_transaccion_section",
+  "divisa_de_cambio",
+  "column_break_udlv",
+  "cuenta_de_ingreso",
+  "column_break_buhb",
+  "cantidad",
+  "tasa_de_cambio",
+  "importe",
+  "section_break_hgwb",
+  "fecha_pago",
+  "referencia",
+  "entrada_de_pago",
+  "column_break_ylwi",
+  "transaccion_bancaria",
+  "confirmado",
+  "comprobante"
+ ],
+ "fields": [
+  {
+   "fieldname": "informacion_de_la_transaccion_section",
+   "fieldtype": "Section Break",
+   "label": "Informacion Monetaria"
+  },
+  {
+   "fieldname": "divisa_de_cambio",
+   "fieldtype": "Link",
+   "label": "Divisa de cambio",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "column_break_udlv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cuenta_de_ingreso",
+   "fieldtype": "Link",
+   "label": "Cuenta de Ingreso",
+   "options": "Mode of Payment"
+  },
+  {
+   "fieldname": "column_break_buhb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "cantidad",
+   "fieldtype": "Float",
+   "label": "Cantidad en (Divisa)",
+   "precision": "2"
+  },
+  {
+   "default": "1",
+   "fieldname": "tasa_de_cambio",
+   "fieldtype": "Float",
+   "label": "Tasa 1xUSD---> [Divisa]",
+   "precision": "9"
+  },
+  {
+   "default": "0",
+   "fieldname": "importe",
+   "fieldtype": "Currency",
+   "label": "Importe (USD)"
+  },
+  {
+   "fieldname": "section_break_hgwb",
+   "fieldtype": "Section Break",
+   "label": "Referencias"
+  },
+  {
+   "fieldname": "fecha_pago",
+   "fieldtype": "Date",
+   "label": "Fecha de la transaccion"
+  },
+  {
+   "fieldname": "referencia",
+   "fieldtype": "Data",
+   "label": "Referencia"
+  },
+  {
+   "fieldname": "entrada_de_pago",
+   "fieldtype": "Link",
+   "label": "Entrada de pago relacionada",
+   "options": "Payment Entry"
+  },
+  {
+   "fieldname": "column_break_ylwi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "transaccion_bancaria",
+   "fieldtype": "Link",
+   "label": "Transaccion Bancaria",
+   "options": "Bank Transaction"
+  },
+  {
+   "default": "0",
+   "description": "Si esta marcada el pago se encuentra reconciliada con la entidad bancaria",
+   "fieldname": "confirmado",
+   "fieldtype": "Check",
+   "label": "Confirmado",
+   "read_only": 1
+  },
+  {
+   "fieldname": "comprobante",
+   "fieldtype": "Attach Image",
+   "label": "Comprobante"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-11-13 08:28:36.214114",
+ "modified_by": "Administrator",
+ "module": "OroKalipso",
+ "name": "Cambios divisas items",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

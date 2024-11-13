@@ -1,0 +1,496 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-11-04 11:25:47.868503",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "detalles_tab",
+  "title",
+  "naming_series",
+  "supplier",
+  "supplier_name",
+  "company",
+  "oficina",
+  "column_break_uydn",
+  "posting_date",
+  "posting_time",
+  "set_posting_time",
+  "column_break_dnrk",
+  "saldo_cliente",
+  "apodo",
+  "contacto",
+  "nro_movil",
+  "section_break_vnww",
+  "peso_sin_fundir",
+  "peso_fundido",
+  "porc_merma",
+  "column_break_zdrx",
+  "ley_analitica",
+  "ley_recuperable",
+  "secuencia_maquina",
+  "column_break_jxne",
+  "en_oficina",
+  "calcular",
+  "puras_en_gr",
+  "nro_de_calculos",
+  "payments_tab",
+  "opciones_de_cobro_section",
+  "cobro_en_virutas",
+  "viruta_predeterminado",
+  "item_predeterminado",
+  "almacen_predeterminado",
+  "cuenta_de_amortizacion",
+  "column_break_rwfc",
+  "cobro_en_divisas",
+  "divisas_predeterminado",
+  "item_servicio",
+  "centro_costos",
+  "costo_cero",
+  "cobro_en_viruta_section",
+  "items",
+  "cobro_en_divisas_section",
+  "credito",
+  "analizar_puro_pagos",
+  "totales_section",
+  "monto_cobrado",
+  "pendiente",
+  "column_break_rvek",
+  "virutas_cobradas",
+  "more_info_tab",
+  "section_break_nszm",
+  "amended_from",
+  "purchase_invoice",
+  "entrada_de_pago_relacionada",
+  "opciones_tab",
+  "enviar_msj"
+ ],
+ "fields": [
+  {
+   "fieldname": "detalles_tab",
+   "fieldtype": "Tab Break",
+   "label": "Detalles"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Title",
+   "no_copy": 1,
+   "print_hide": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Series",
+   "no_copy": 1,
+   "options": "AINV-.YYYY.-\nAINV-RET-.YYYY.-",
+   "print_hide": 1,
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Supplier",
+   "options": "Supplier",
+   "print_hide": 1,
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_global_search": 1,
+   "label": "Supplier Name",
+   "read_only": 1
+  },
+  {
+   "depends_on": "supplier",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "print_hide": 1,
+   "remember_last_selected_value": 1
+  },
+  {
+   "fieldname": "oficina",
+   "fieldtype": "Select",
+   "label": "Oficina",
+   "options": "\nCalle Miranda\nCalle Van Prag",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_uydn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "print_hide": 1,
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "default": "Now",
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "label": "Posting Time",
+   "no_copy": 1,
+   "print_hide": 1,
+   "print_width": "100px",
+   "width": "100px"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.docstatus==0",
+   "fieldname": "set_posting_time",
+   "fieldtype": "Check",
+   "label": "Edit Posting Date and Time",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "column_break_dnrk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Saldo cliente reflejado de la siguiente forma \n(\"+\" Monto cobrarle)\n(\"-\" Se le debe al cliente)",
+   "fieldname": "saldo_cliente",
+   "fieldtype": "Currency",
+   "label": "Saldo del Cliente"
+  },
+  {
+   "fieldname": "apodo",
+   "fieldtype": "Data",
+   "label": "Apodo"
+  },
+  {
+   "fieldname": "contacto",
+   "fieldtype": "Link",
+   "label": "Contacto",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "nro_movil",
+   "fieldtype": "Data",
+   "label": "Nro Movil"
+  },
+  {
+   "fieldname": "section_break_vnww",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "description": "Si se Fundio en Oficina este Peso es peso Amalgamado",
+   "fieldname": "peso_sin_fundir",
+   "fieldtype": "Float",
+   "label": "Peso en gr (Peso Sin Fundir)",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval: doc.en_oficina == 1",
+   "fieldname": "peso_fundido",
+   "fieldtype": "Float",
+   "label": "Peso de barra en gr. (despues de Fundir)",
+   "precision": "2"
+  },
+  {
+   "default": "0",
+   "fieldname": "porc_merma",
+   "fieldtype": "Percent",
+   "label": "Porcentaje de Merma",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_zdrx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "ley_analitica",
+   "fieldtype": "Float",
+   "label": "Ley Analitica",
+   "precision": "2"
+  },
+  {
+   "default": "0",
+   "fieldname": "ley_recuperable",
+   "fieldtype": "Float",
+   "label": "Ley Recuperanble",
+   "mandatory_depends_on": "frm.doc.ley_analitica > 100",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "secuencia_maquina",
+   "fieldtype": "Int",
+   "label": "Nro de Secuencia de analisis de la maquina."
+  },
+  {
+   "fieldname": "column_break_jxne",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "en_oficina",
+   "fieldtype": "Check",
+   "label": "Fundici\u00f3n realizada en la oficina."
+  },
+  {
+   "depends_on": "eval: doc.docstatus != 1",
+   "fieldname": "calcular",
+   "fieldtype": "Button",
+   "label": "Calcular"
+  },
+  {
+   "default": "0",
+   "fieldname": "puras_en_gr",
+   "fieldtype": "Float",
+   "label": "Puras en gr",
+   "precision": "2"
+  },
+  {
+   "default": "0",
+   "fieldname": "nro_de_calculos",
+   "fieldtype": "Int",
+   "label": "Nro de Calculos Realizados"
+  },
+  {
+   "fieldname": "payments_tab",
+   "fieldtype": "Tab Break",
+   "label": "Payments"
+  },
+  {
+   "fieldname": "opciones_de_cobro_section",
+   "fieldtype": "Section Break",
+   "label": "Opciones de Cobro"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval: doc.cobro_en_divisas == 0 && doc.costo_cero == 0",
+   "fieldname": "cobro_en_virutas",
+   "fieldtype": "Check",
+   "label": "Cobro en Virutas"
+  },
+  {
+   "default": "2",
+   "depends_on": "eval: doc.cobro_en_divisas == 0",
+   "fieldname": "viruta_predeterminado",
+   "fieldtype": "Float",
+   "label": "Monto en virutas predeterminad en [gr]",
+   "precision": "2"
+  },
+  {
+   "default": "Viruta",
+   "depends_on": "eval: doc.cobro_en_divisas == 0",
+   "fieldname": "item_predeterminado",
+   "fieldtype": "Link",
+   "label": "Item Predeterminado (Viruta)",
+   "options": "Item"
+  },
+  {
+   "depends_on": "eval: doc.cobro_en_divisas == 0",
+   "fieldname": "almacen_predeterminado",
+   "fieldtype": "Link",
+   "label": "Almacenamiento Predeterminado",
+   "options": "Warehouse"
+  },
+  {
+   "default": "Ingresos por analisis - CMM",
+   "fieldname": "cuenta_de_amortizacion",
+   "fieldtype": "Link",
+   "label": "Cuenta de amortizacion",
+   "options": "Account"
+  },
+  {
+   "fieldname": "column_break_rwfc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval: doc.cobro_en_virutas == 0 && doc.costo_cero == 0",
+   "fieldname": "cobro_en_divisas",
+   "fieldtype": "Check",
+   "label": "Cobro en Divisas"
+  },
+  {
+   "default": "15",
+   "depends_on": "eval: doc.cobro_en_virutas == 0",
+   "fieldname": "divisas_predeterminado",
+   "fieldtype": "Currency",
+   "label": "Monto en divisas predeterminado [USD]"
+  },
+  {
+   "default": "Servicio de Analisis",
+   "fieldname": "item_servicio",
+   "fieldtype": "Link",
+   "label": "Definicion del servicio:",
+   "options": "Item"
+  },
+  {
+   "default": "Analisis - CMM",
+   "fieldname": "centro_costos",
+   "fieldtype": "Link",
+   "label": "Centro de Costos",
+   "options": "Cost Center"
+  },
+  {
+   "default": "0",
+   "fieldname": "costo_cero",
+   "fieldtype": "Check",
+   "label": "Analisis costo cero [0 USD]"
+  },
+  {
+   "depends_on": "eval: doc.cobro_en_virutas == 1",
+   "fieldname": "cobro_en_viruta_section",
+   "fieldtype": "Section Break",
+   "label": "Cobro en Viruta"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Pago Virutas",
+   "options": "Analizar puro item",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval: doc.cobro_en_divisas == 1",
+   "fieldname": "cobro_en_divisas_section",
+   "fieldtype": "Section Break",
+   "label": "Cobro en Divisas"
+  },
+  {
+   "default": "0",
+   "description": "En caso de no pagar se le asignara un credito",
+   "fieldname": "credito",
+   "fieldtype": "Check",
+   "label": "Credito"
+  },
+  {
+   "depends_on": "eval: doc.credito == 0",
+   "fieldname": "analizar_puro_pagos",
+   "fieldtype": "Table",
+   "label": "Pagos",
+   "options": "Analizar puro pagos"
+  },
+  {
+   "fieldname": "totales_section",
+   "fieldtype": "Section Break",
+   "label": "Totales"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval: doc.cobro_en_virutas == 0",
+   "fieldname": "monto_cobrado",
+   "fieldtype": "Currency",
+   "label": "Monto Cobrado [USD]",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "pendiente",
+   "fieldtype": "Currency",
+   "label": "Pendiente [USD]",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_rvek",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval: doc.cobro_en_divisas == 0",
+   "fieldname": "virutas_cobradas",
+   "fieldtype": "Float",
+   "label": "Virutas cobradas",
+   "read_only": 1
+  },
+  {
+   "fieldname": "more_info_tab",
+   "fieldtype": "Tab Break",
+   "label": "Conections"
+  },
+  {
+   "fieldname": "section_break_nszm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Analizar Puro",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "purchase_invoice",
+   "fieldtype": "Link",
+   "label": "Factura de Ingreso",
+   "options": "Purchase Invoice",
+   "search_index": 1
+  },
+  {
+   "fieldname": "entrada_de_pago_relacionada",
+   "fieldtype": "Link",
+   "label": "Entrada de Pago Relacionada",
+   "options": "Payment Entry"
+  },
+  {
+   "fieldname": "opciones_tab",
+   "fieldtype": "Tab Break",
+   "label": "Opciones"
+  },
+  {
+   "default": "0",
+   "fieldname": "enviar_msj",
+   "fieldtype": "Check",
+   "label": "Enviar Msj"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-13 08:31:43.203060",
+ "modified_by": "Administrator",
+ "module": "OroKalipso",
+ "name": "Analizar Puro",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

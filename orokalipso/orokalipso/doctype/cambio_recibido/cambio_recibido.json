@@ -1,0 +1,306 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-08-02 17:37:17.587592",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "conections_section",
+  "title",
+  "supplier",
+  "naming_series",
+  "supplier_name",
+  "company",
+  "column_break_aqha",
+  "posting_date",
+  "posting_time",
+  "set_posting_time",
+  "saldo_cliente",
+  "column_break_qbwp",
+  "persona",
+  "divisas_de_cambio_section",
+  "items",
+  "pagos_section",
+  "pagos",
+  "totales_section",
+  "total_neto",
+  "comision_porcentual",
+  "comision",
+  "column_break_xjsq",
+  "total_pagar",
+  "total_pagado",
+  "queda_por_pagar",
+  "column_break_tmss",
+  "item_comision",
+  "centro_de_costos",
+  "referencia_de_la_comision",
+  "comision_cobrada",
+  "comision_pagada",
+  "connections_tab",
+  "purchase_invoice",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "conections_section",
+   "fieldtype": "Section Break",
+   "label": "Conections"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Title",
+   "print_hide": 1
+  },
+  {
+   "description": "Titular de los fondos.",
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Cliente",
+   "options": "Supplier",
+   "reqd": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "ACC-CAMBINV-.YYYY.-\nACC-CAMBINV-RET-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_global_search": 1,
+   "label": "Supplier name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "column_break_aqha",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "read_only_depends_on": "eval: doc.set_posting_time===0",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "default": "Now",
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "label": "Posting Time",
+   "read_only_depends_on": "eval: doc.set_posting_time===0"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.docstatus==0",
+   "fieldname": "set_posting_time",
+   "fieldtype": "Check",
+   "label": "Edit Posting Date and Time",
+   "print_hide": 1
+  },
+  {
+   "default": "0",
+   "description": "Saldo cliente reflejado de la siguiente forma \n(\"+\" Se suma al saldo de la empresa)\n(\"-\" Se resta al saldo de la empresa)",
+   "fieldname": "saldo_cliente",
+   "fieldtype": "Currency",
+   "label": "Saldo de cliente",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_qbwp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Persona quien recibe el cambio.",
+   "fieldname": "persona",
+   "fieldtype": "Link",
+   "label": "Persona de contacto",
+   "options": "Contact",
+   "reqd": 1
+  },
+  {
+   "fieldname": "divisas_de_cambio_section",
+   "fieldtype": "Section Break",
+   "label": "Divisas recibidas"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Divisas",
+   "options": "Cambios divisas items"
+  },
+  {
+   "fieldname": "pagos_section",
+   "fieldtype": "Section Break",
+   "label": "Pagos realizados"
+  },
+  {
+   "description": "Moneda Base (USD) se deben colocar los pagos con su respectiva tasa de cambio para llevarlas a moneda \nBase",
+   "fieldname": "pagos",
+   "fieldtype": "Table",
+   "options": "cambios divisas pagos"
+  },
+  {
+   "fieldname": "totales_section",
+   "fieldtype": "Section Break",
+   "label": "Totales"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_neto",
+   "fieldtype": "Currency",
+   "label": "Total Recibido (USD)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "comision_porcentual",
+   "fieldtype": "Percent",
+   "label": "Porcentaje de comision (%)",
+   "precision": "2",
+   "read_only_depends_on": "eval: doc.comision_cobrada===0 && doc.comision_pagada===0"
+  },
+  {
+   "default": "0",
+   "fieldname": "comision",
+   "fieldtype": "Currency",
+   "label": "Comision (USD)",
+   "read_only_depends_on": "eval: doc.comision_cobrada===0 && doc.comision_pagada===0"
+  },
+  {
+   "fieldname": "column_break_xjsq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_pagar",
+   "fieldtype": "Currency",
+   "label": "Total a Pagar (USD)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_pagado",
+   "fieldtype": "Currency",
+   "label": "Total Pagado",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "queda_por_pagar",
+   "fieldtype": "Currency",
+   "label": "Queda Por Pagar",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_tmss",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Comision por Cambios",
+   "fieldname": "item_comision",
+   "fieldtype": "Link",
+   "label": "Produco/Servicio de Comision",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "default": "Cambios - CMM",
+   "fieldname": "centro_de_costos",
+   "fieldtype": "Link",
+   "label": "Centro de costos",
+   "options": "Cost Center",
+   "read_only": 1
+  },
+  {
+   "fieldname": "referencia_de_la_comision",
+   "fieldtype": "Link",
+   "label": "Referencia de la Comision",
+   "options": "Purchase Invoice",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval: doc.comision_pagada===0 && doc.total_neto!=0",
+   "description": "Debe marcar esta casilla si se establece una comision a cobrar.",
+   "fieldname": "comision_cobrada",
+   "fieldtype": "Check",
+   "label": "Se cobra comision"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval: doc.comision_cobrada===0 && doc.total_neto!=0",
+   "description": "Marque esta casilla en caso de que se deba pagar comision por la misma.",
+   "fieldname": "comision_pagada",
+   "fieldtype": "Check",
+   "label": "Se paga comision"
+  },
+  {
+   "fieldname": "connections_tab",
+   "fieldtype": "Tab Break",
+   "label": "Connections",
+   "show_dashboard": 1
+  },
+  {
+   "fieldname": "purchase_invoice",
+   "fieldtype": "Link",
+   "label": "to purchase invoice",
+   "options": "Purchase Invoice"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Cambio recibido",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-13 08:28:25.325883",
+ "modified_by": "Administrator",
+ "module": "OroKalipso",
+ "name": "Cambio recibido",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_views": 1
+}
