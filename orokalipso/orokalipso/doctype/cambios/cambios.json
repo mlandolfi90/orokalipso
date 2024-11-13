@@ -144,7 +144,7 @@
    "fieldname": "items",
    "fieldtype": "Table",
    "label": "Divisas",
-   "options": "Cambios divisas items"
+   "options": "Cambios pagos in"
   },
   {
    "fieldname": "pagos_section",
@@ -155,7 +155,7 @@
    "description": "Moneda Base (USD) se deben colocar los pagos con su respectiva tasa de cambio para llevarlas a moneda \nBase",
    "fieldname": "pagos",
    "fieldtype": "Table",
-   "options": "cambios divisas pagos"
+   "options": "Cambios pagos out"
   },
   {
    "fieldname": "totales_section",
@@ -269,7 +269,7 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Cambio recibido",
+   "options": "Cambios",
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
@@ -278,10 +278,10 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-13 08:28:25.325883",
+ "modified": "2024-11-13 11:14:18.324903",
  "modified_by": "Administrator",
  "module": "OroKalipso",
- "name": "Cambio recibido",
+ "name": "Cambios",
  "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
