@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "oficina",
+  "acronimo",
   "column_break_ekyo",
   "descripcion",
   "configuarion_de_almacenes_section",
@@ -122,11 +123,16 @@
    "fieldname": "precio_viruta",
    "fieldtype": "Currency",
    "label": "Precio del Gramo de Viruta estimado"
+  },
+  {
+   "fieldname": "acronimo",
+   "fieldtype": "Data",
+   "label": "Acronimo "
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-13 14:37:00.269747",
+ "modified": "2024-11-14 08:13:07.437177",
  "modified_by": "Administrator",
  "module": "OroKalipso",
  "name": "Ofinicinas configuraciones",

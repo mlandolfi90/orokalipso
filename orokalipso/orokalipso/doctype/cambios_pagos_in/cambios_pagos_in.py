@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class Cambiosdivisasitems(Document):
+class Cambiospagosin(Document):
 	pass
