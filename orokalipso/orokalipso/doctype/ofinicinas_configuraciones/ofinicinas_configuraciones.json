@@ -1,0 +1,152 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:oficina",
+ "creation": "2024-11-13 12:07:59.041347",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "oficina",
+  "column_break_ekyo",
+  "descripcion",
+  "configuarion_de_almacenes_section",
+  "item_analisis",
+  "costo_en_viruta_estandar",
+  "costo_en_viruta_minimo",
+  "precio_viruta",
+  "cuenta_amortizacion",
+  "almacen_predeterminado_analisis",
+  "column_break_aipt",
+  "item_servicio_analisis",
+  "divisas_estandar",
+  "divisas_minimo",
+  "cuenta_de_gastos_del_servicio_predeterminada",
+  "centro_costos_analisis",
+  "configuracion_de_cambios_section",
+  "servicio_de_comision_predeterminada"
+ ],
+ "fields": [
+  {
+   "fieldname": "oficina",
+   "fieldtype": "Data",
+   "label": "Oficina ",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_ekyo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "descripcion",
+   "fieldtype": "Text",
+   "label": "Breve descripcion",
+   "length": 100
+  },
+  {
+   "fieldname": "configuarion_de_almacenes_section",
+   "fieldtype": "Section Break",
+   "label": "Configuarion de Analisis"
+  },
+  {
+   "fieldname": "costo_en_viruta_estandar",
+   "fieldtype": "Float",
+   "label": "Costo en viruta estandar"
+  },
+  {
+   "fieldname": "costo_en_viruta_minimo",
+   "fieldtype": "Float",
+   "label": "Costo en viruta minimo"
+  },
+  {
+   "fieldname": "column_break_aipt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cuenta_de_gastos_del_servicio_predeterminada",
+   "fieldtype": "Link",
+   "label": "Cuenta de Gastos del Servicio Predeterminada",
+   "options": "Account"
+  },
+  {
+   "fieldname": "configuracion_de_cambios_section",
+   "fieldtype": "Section Break",
+   "label": "Configuracion de cambios"
+  },
+  {
+   "fieldname": "servicio_de_comision_predeterminada",
+   "fieldtype": "Link",
+   "label": "Servicio de Comision predeterminada",
+   "options": "Item"
+  },
+  {
+   "fieldname": "item_analisis",
+   "fieldtype": "Link",
+   "label": "Item Analisis Predetermiando (viruta)",
+   "options": "Item"
+  },
+  {
+   "fieldname": "cuenta_amortizacion",
+   "fieldtype": "Link",
+   "label": "Cuenta de Amortizacion predeterminada",
+   "options": "Account"
+  },
+  {
+   "fieldname": "almacen_predeterminado_analisis",
+   "fieldtype": "Link",
+   "label": "Almacen Virutas predeterminado",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "divisas_estandar",
+   "fieldtype": "Currency",
+   "label": "Costo en divisa Estandar"
+  },
+  {
+   "fieldname": "item_servicio_analisis",
+   "fieldtype": "Link",
+   "label": "Servicio de Analisis Predeterminado",
+   "options": "Item"
+  },
+  {
+   "fieldname": "divisas_minimo",
+   "fieldtype": "Currency",
+   "label": "Costo en divisas minimo"
+  },
+  {
+   "fieldname": "centro_costos_analisis",
+   "fieldtype": "Link",
+   "label": "Centro de Costos predeterminado",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "precio_viruta",
+   "fieldtype": "Currency",
+   "label": "Precio del Gramo de Viruta estimado"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-13 14:37:00.269747",
+ "modified_by": "Administrator",
+ "module": "OroKalipso",
+ "name": "Ofinicinas configuraciones",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
