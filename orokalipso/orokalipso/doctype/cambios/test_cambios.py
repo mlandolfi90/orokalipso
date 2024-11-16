@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestCambiorecibido(FrappeTestCase):
+class TestCambios(FrappeTestCase):
 	pass

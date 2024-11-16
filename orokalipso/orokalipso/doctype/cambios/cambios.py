@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class Cambiorecibido(Document):
+class Cambios(Document):
 	pass

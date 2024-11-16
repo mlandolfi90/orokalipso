@@ -129,9 +129,9 @@ app_license = "mit"
 # ---------------
 # Override standard doctype classes
 
-# override_doctype_class = {
-# 	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+#override_doctype_class = {
+#    "Currency Exchange": "orokalipso.overrides.orokalipsoExchange"
+#}
 
 # Document Events
 # ---------------
@@ -242,13 +242,17 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
-fixtures = [{
+fixtures = [
+    {
         "doctype": "Custom Field",
+        "filters": [["module", "=", "orokalipso"]]
     },
     {
         "doctype": "Server Script",
+        "filters": [["module", "=", "orokalipso"]]
     },
     {
         "doctype": "Client Script",
+        "filters": [["module", "=", "orokalipso"]]
     }
 ]
