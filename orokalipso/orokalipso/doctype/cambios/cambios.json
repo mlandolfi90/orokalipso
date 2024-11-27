@@ -12,17 +12,24 @@
   "naming_series",
   "supplier_name",
   "company",
+  "oficina",
+  "acronimo_oficina",
   "column_break_aqha",
   "posting_date",
   "posting_time",
   "set_posting_time",
-  "saldo_cliente",
+  "recibido_ext",
+  "envio_ext",
+  "persona_externa",
   "column_break_qbwp",
-  "persona",
+  "saldo_cliente",
+  "apodo",
+  "contacto",
+  "nro_movil",
   "divisas_de_cambio_section",
-  "items",
+  "pagos_in",
   "pagos_section",
-  "pagos",
+  "pagos_out",
   "totales_section",
   "total_neto",
   "comision_porcentual",
@@ -32,8 +39,8 @@
   "total_pagado",
   "queda_por_pagar",
   "column_break_tmss",
-  "item_comision",
-  "centro_de_costos",
+  "item_servicio_cambios",
+  "centro_costos_cambios",
   "referencia_de_la_comision",
   "comision_cobrada",
   "comision_pagada",
@@ -66,7 +73,7 @@
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Series",
-   "options": "ACC-CAMBINV-.YYYY.-\nACC-CAMBINV-RET-.YYYY.-",
+   "options": "CAMBINV-.YYYY.-\nCAMBINV-RET-.YYYY.-",
    "reqd": 1
   },
   {
@@ -117,7 +124,7 @@
   },
   {
    "default": "0",
-   "description": "Saldo cliente reflejado de la siguiente forma \n(\"+\" Se suma al saldo de la empresa)\n(\"-\" Se resta al saldo de la empresa)",
+   "description": "Saldo cliente reflejado de la siguiente forma \n(\"+\" El Cliente debe pagar)\n(\"-\" Se le debe al cliente)",
    "fieldname": "saldo_cliente",
    "fieldtype": "Currency",
    "label": "Saldo de cliente",
@@ -128,34 +135,14 @@
    "fieldtype": "Column Break"
   },
   {
-   "description": "Persona quien recibe el cambio.",
-   "fieldname": "persona",
-   "fieldtype": "Link",
-   "label": "Persona de contacto",
-   "options": "Contact",
-   "reqd": 1
-  },
-  {
    "fieldname": "divisas_de_cambio_section",
    "fieldtype": "Section Break",
    "label": "Divisas recibidas"
   },
   {
-   "fieldname": "items",
-   "fieldtype": "Table",
-   "label": "Divisas",
-   "options": "Cambios pagos in"
-  },
-  {
    "fieldname": "pagos_section",
    "fieldtype": "Section Break",
    "label": "Pagos realizados"
-  },
-  {
-   "description": "Moneda Base (USD) se deben colocar los pagos con su respectiva tasa de cambio para llevarlas a moneda \nBase",
-   "fieldname": "pagos",
-   "fieldtype": "Table",
-   "options": "Cambios pagos out"
   },
   {
    "fieldname": "totales_section",
@@ -214,22 +201,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "default": "Comision por Cambios",
-   "fieldname": "item_comision",
-   "fieldtype": "Link",
-   "label": "Produco/Servicio de Comision",
-   "options": "Item",
-   "read_only": 1
-  },
-  {
-   "default": "Cambios - CMM",
-   "fieldname": "centro_de_costos",
-   "fieldtype": "Link",
-   "label": "Centro de costos",
-   "options": "Cost Center",
-   "read_only": 1
-  },
-  {
    "fieldname": "referencia_de_la_comision",
    "fieldtype": "Link",
    "label": "Referencia de la Comision",
@@ -273,12 +244,90 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "oficina",
+   "fieldtype": "Link",
+   "label": "Oficina",
+   "options": "Oficinas configuraciones",
+   "reqd": 1
+  },
+  {
+   "fieldname": "acronimo_oficina",
+   "fieldtype": "Data",
+   "label": "Acronimo de Oficina",
+   "read_only": 1
+  },
+  {
+   "fieldname": "pagos_in",
+   "fieldtype": "Table",
+   "label": "Divisas",
+   "options": "Cambios pagos in"
+  },
+  {
+   "description": "Moneda Base (USD) se deben colocar los pagos con su respectiva tasa de cambio para llevarlas a moneda \nBase",
+   "fieldname": "pagos_out",
+   "fieldtype": "Table",
+   "options": "Cambios pagos out"
+  },
+  {
+   "fieldname": "centro_costos_cambios",
+   "fieldtype": "Link",
+   "label": "Centro de costos",
+   "options": "Cost Center",
+   "read_only": 1
+  },
+  {
+   "fieldname": "item_servicio_cambios",
+   "fieldtype": "Link",
+   "label": "Produco/Servicio de Comision",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "apodo",
+   "fieldtype": "Data",
+   "label": "Apodo"
+  },
+  {
+   "fieldname": "nro_movil",
+   "fieldtype": "Data",
+   "label": "Nro Telefonico"
+  },
+  {
+   "description": "Persona quien recibe el cambio.",
+   "fieldname": "contacto",
+   "fieldtype": "Link",
+   "label": "Persona de contacto",
+   "options": "Contact",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval: doc.recibido_ext == 0",
+   "fieldname": "envio_ext",
+   "fieldtype": "Check",
+   "label": "Envio desde cuenta Externa"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval: doc.envio_ext == 0",
+   "fieldname": "recibido_ext",
+   "fieldtype": "Check",
+   "label": "Recibido en cuenta Externa"
+  },
+  {
+   "depends_on": "eval: doc.envio_ext == 1 || doc.recibido_ext == 1",
+   "fieldname": "persona_externa",
+   "fieldtype": "Link",
+   "label": "Persona Externa (Envio/Recepcion)",
+   "options": "Supplier"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-13 11:14:18.324903",
+ "modified": "2024-11-19 16:16:11.072312",
  "modified_by": "Administrator",
  "module": "OroKalipso",
  "name": "Cambios",

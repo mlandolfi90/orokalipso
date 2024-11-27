@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class Ofinicinasconfiguraciones(Document):
+class InventarioOrokalipso(Document):
 	pass

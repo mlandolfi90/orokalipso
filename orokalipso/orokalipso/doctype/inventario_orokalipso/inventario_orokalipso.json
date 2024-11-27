@@ -1,0 +1,148 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-25 08:28:10.879210",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_jfzd",
+  "fecha",
+  "hora",
+  "oficina",
+  "column_break_npkd",
+  "estatus",
+  "oro_puro_section",
+  "articulo_oro_puro",
+  "column_break_zmla",
+  "oro_amalgamado_section",
+  "articulo_de_oro_amalgamado",
+  "column_break_wpni",
+  "peso_en_gr",
+  "column_break_mvet",
+  "precio",
+  "total_divisa",
+  "conexiones_tab",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_jfzd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Inventario Orokalipso",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "fecha",
+   "fieldtype": "Date",
+   "label": "Fecha"
+  },
+  {
+   "fieldname": "hora",
+   "fieldtype": "Time",
+   "label": "Hora"
+  },
+  {
+   "fieldname": "column_break_npkd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "estatus",
+   "fieldtype": "Data",
+   "label": "Estatus"
+  },
+  {
+   "fieldname": "conexiones_tab",
+   "fieldtype": "Tab Break",
+   "label": "Conexiones"
+  },
+  {
+   "fieldname": "oro_amalgamado_section",
+   "fieldtype": "Section Break",
+   "label": "Oro Amalgamado"
+  },
+  {
+   "fieldname": "articulo_de_oro_amalgamado",
+   "fieldtype": "Link",
+   "label": "Articulo de Oro Amalgamado",
+   "options": "Item"
+  },
+  {
+   "fieldname": "column_break_wpni",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "peso_en_gr",
+   "fieldtype": "Float",
+   "label": "Peso en gr"
+  },
+  {
+   "fieldname": "column_break_mvet",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "precio",
+   "fieldtype": "Currency",
+   "label": "Precio"
+  },
+  {
+   "fieldname": "total_divisa",
+   "fieldtype": "Currency",
+   "label": "Total divisa"
+  },
+  {
+   "fieldname": "oro_puro_section",
+   "fieldtype": "Section Break",
+   "label": "Oro Puro"
+  },
+  {
+   "fieldname": "articulo_oro_puro",
+   "fieldtype": "Link",
+   "label": "Articulo Oro Puro",
+   "options": "Item"
+  },
+  {
+   "fieldname": "oficina",
+   "fieldtype": "Link",
+   "label": "Oficina ",
+   "options": "Oficinas configuraciones"
+  },
+  {
+   "fieldname": "column_break_zmla",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-25 09:03:52.853408",
+ "modified_by": "Administrator",
+ "module": "OroKalipso",
+ "name": "Inventario Orokalipso",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

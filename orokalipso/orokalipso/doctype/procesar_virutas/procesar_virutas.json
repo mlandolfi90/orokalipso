@@ -1,0 +1,233 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-11-25 14:33:41.554915",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_fnvm",
+  "title",
+  "oficina",
+  "naming_series",
+  "column_break_tlfw",
+  "fecha",
+  "hora",
+  "datos_section",
+  "obtener_disponible",
+  "viruta_disponible",
+  "valoracion_total",
+  "valoracion_unitaria",
+  "column_break_znen",
+  "item_de_viruta",
+  "almacen_predeterminado_analisis",
+  "resultados_section",
+  "peso_fundido",
+  "puras",
+  "pieza_disponible",
+  "almacen_de_destino",
+  "column_break_piev",
+  "calcular",
+  "merma_porc",
+  "ley_analitica",
+  "ley_recuperable",
+  "valoracion_unitaria_puras",
+  "conexiones_tab",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_fnvm",
+   "fieldtype": "Section Break",
+   "label": "Detalles"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Procesar Virutas",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "oficina",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Oficina",
+   "options": "Oficinas configuraciones",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_tlfw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "fecha",
+   "fieldtype": "Date",
+   "label": "Fecha"
+  },
+  {
+   "default": "Now",
+   "fieldname": "hora",
+   "fieldtype": "Time",
+   "label": "Hora"
+  },
+  {
+   "fieldname": "conexiones_tab",
+   "fieldtype": "Tab Break",
+   "label": "Conexiones"
+  },
+  {
+   "fieldname": "datos_section",
+   "fieldtype": "Section Break",
+   "label": "Datos"
+  },
+  {
+   "fieldname": "viruta_disponible",
+   "fieldtype": "Float",
+   "label": "Viruta Disponible a procesar en gr."
+  },
+  {
+   "fieldname": "column_break_znen",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "obtener_disponible",
+   "fieldtype": "Button",
+   "label": "Obtener Cantidad Disponible:"
+  },
+  {
+   "fieldname": "item_de_viruta",
+   "fieldtype": "Link",
+   "label": "Item de Viruta",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "resultados_section",
+   "fieldtype": "Section Break",
+   "label": "Resultados"
+  },
+  {
+   "fieldname": "pieza_disponible",
+   "fieldtype": "Link",
+   "label": "Pieza en Inventario",
+   "options": "Inventario Orokalipso",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_piev",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ley_analitica",
+   "fieldtype": "Float",
+   "label": "Ley Analitica",
+   "precision": "2"
+  },
+  {
+   "fieldname": "ley_recuperable",
+   "fieldtype": "Float",
+   "label": "Ley Recuperable",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "merma_porc",
+   "fieldtype": "Percent",
+   "label": "Merma Porcentual",
+   "read_only": 1
+  },
+  {
+   "fieldname": "calcular",
+   "fieldtype": "Button",
+   "label": "Calcular"
+  },
+  {
+   "fieldname": "almacen_predeterminado_analisis",
+   "fieldtype": "Link",
+   "label": "Almacen de Virutas para la oficina",
+   "options": "Warehouse",
+   "read_only": 1
+  },
+  {
+   "fieldname": "almacen_de_destino",
+   "fieldtype": "Link",
+   "label": "Almacen de destino",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "valoracion_total",
+   "fieldtype": "Currency",
+   "label": "Valoracion total en [USD]"
+  },
+  {
+   "fieldname": "valoracion_unitaria",
+   "fieldtype": "Currency",
+   "label": "Valor por Unidad [gr] --> [USD]/[gr]"
+  },
+  {
+   "fieldname": "peso_fundido",
+   "fieldtype": "Float",
+   "label": "Peso fundido en gr."
+  },
+  {
+   "fieldname": "puras",
+   "fieldtype": "Float",
+   "label": "Puras en gr.",
+   "read_only": 1
+  },
+  {
+   "fieldname": "valoracion_unitaria_puras",
+   "fieldtype": "Currency",
+   "label": "Valoracion por unidad --> [USD]/[gr]",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Title",
+   "no_copy": 1,
+   "print_hide": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "PrVi.-"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-27 10:46:53.615947",
+ "modified_by": "Administrator",
+ "module": "OroKalipso",
+ "name": "Procesar Virutas",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

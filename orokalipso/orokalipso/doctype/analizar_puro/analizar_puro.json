@@ -26,12 +26,14 @@
   "peso_sin_fundir",
   "peso_fundido",
   "porc_merma",
+  "peso_descuento_viruta",
   "column_break_zdrx",
   "ley_analitica",
   "ley_recuperable",
   "secuencia_maquina",
   "column_break_jxne",
   "en_oficina",
+  "descuento_viruta",
   "calcular",
   "puras_en_gr",
   "nro_de_calculos",
@@ -129,7 +131,7 @@
    "fieldname": "oficina",
    "fieldtype": "Link",
    "label": "Oficina",
-   "options": "Ofinicinas configuraciones",
+   "options": "Oficinas configuraciones",
    "reqd": 1
   },
   {
@@ -488,12 +490,26 @@
    "fieldname": "precio_viruta",
    "fieldtype": "Currency",
    "label": "Precio Estimado de 1 gr de Viruta en [USD]"
+  },
+  {
+   "default": "0",
+   "fieldname": "descuento_viruta",
+   "fieldtype": "Check",
+   "label": "Descuento de Viruta"
+  },
+  {
+   "depends_on": "eval: doc.descuento_viruta == 1",
+   "fieldname": "peso_descuento_viruta",
+   "fieldtype": "Float",
+   "label": "Peso de barra en gr. (Despues de descontar Viruta)",
+   "precision": "2",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-13 14:39:19.449777",
+ "modified": "2024-11-25 09:53:53.252096",
  "modified_by": "Administrator",
  "module": "OroKalipso",
  "name": "Analizar Puro",

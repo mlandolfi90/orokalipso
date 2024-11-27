@@ -129,9 +129,9 @@ app_license = "mit"
 # ---------------
 # Override standard doctype classes
 
-#override_doctype_class = {
-#    "Currency Exchange": "orokalipso.overrides.orokalipsoExchange"
-#}
+override_doctype_class = {
+    "Currency Exchange": "orokalipso.overrides.orokalipsoExchange"
+}
 
 # Document Events
 # ---------------

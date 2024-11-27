@@ -24,7 +24,12 @@
   "cuenta_de_gastos_del_servicio_predeterminada",
   "centro_costos_analisis",
   "configuracion_de_cambios_section",
-  "servicio_de_comision_predeterminada"
+  "item_servicio_cambios",
+  "column_break_zujg",
+  "centro_costos_cambios",
+  "configuracion_de_manejo_de_oro_section",
+  "almacen_de_oro_amalgamado",
+  "almacen_de_oro_puro"
  ],
  "fields": [
   {
@@ -39,7 +44,7 @@
   },
   {
    "fieldname": "descripcion",
-   "fieldtype": "Text",
+   "fieldtype": "Small Text",
    "label": "Breve descripcion",
    "length": 100
   },
@@ -72,12 +77,6 @@
    "fieldname": "configuracion_de_cambios_section",
    "fieldtype": "Section Break",
    "label": "Configuracion de cambios"
-  },
-  {
-   "fieldname": "servicio_de_comision_predeterminada",
-   "fieldtype": "Link",
-   "label": "Servicio de Comision predeterminada",
-   "options": "Item"
   },
   {
    "fieldname": "item_analisis",
@@ -128,14 +127,47 @@
    "fieldname": "acronimo",
    "fieldtype": "Data",
    "label": "Acronimo "
+  },
+  {
+   "fieldname": "centro_costos_cambios",
+   "fieldtype": "Link",
+   "label": "Centro de Costos Cambio",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "item_servicio_cambios",
+   "fieldtype": "Link",
+   "label": "Servicio de Comision predeterminada",
+   "options": "Item"
+  },
+  {
+   "fieldname": "configuracion_de_manejo_de_oro_section",
+   "fieldtype": "Section Break",
+   "label": "Configuracion de manejo de oro"
+  },
+  {
+   "fieldname": "almacen_de_oro_amalgamado",
+   "fieldtype": "Link",
+   "label": "Almacen de Oro Amalgamado",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "almacen_de_oro_puro",
+   "fieldtype": "Link",
+   "label": "Almacen de Oro Puro",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "column_break_zujg",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-14 08:13:07.437177",
+ "modified": "2024-11-25 14:44:55.828112",
  "modified_by": "Administrator",
  "module": "OroKalipso",
- "name": "Ofinicinas configuraciones",
+ "name": "Oficinas configuraciones",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
