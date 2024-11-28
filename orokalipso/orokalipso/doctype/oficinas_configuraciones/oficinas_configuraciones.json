@@ -8,6 +8,7 @@
  "field_order": [
   "oficina",
   "acronimo",
+  "company",
   "column_break_ekyo",
   "descripcion",
   "configuarion_de_almacenes_section",
@@ -28,7 +29,10 @@
   "column_break_zujg",
   "centro_costos_cambios",
   "configuracion_de_manejo_de_oro_section",
+  "item_amalgamado",
   "almacen_de_oro_amalgamado",
+  "column_break_pacu",
+  "item_puro",
   "almacen_de_oro_puro"
  ],
  "fields": [
@@ -160,11 +164,33 @@
   {
    "fieldname": "column_break_zujg",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item_amalgamado",
+   "fieldtype": "Link",
+   "label": "Item Oro Almagamado",
+   "options": "Item"
+  },
+  {
+   "fieldname": "column_break_pacu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item_puro",
+   "fieldtype": "Link",
+   "label": "Item Oro puro",
+   "options": "Item"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Compa\u00f1ia",
+   "options": "Company"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-25 14:44:55.828112",
+ "modified": "2024-11-27 13:24:18.580368",
  "modified_by": "Administrator",
  "module": "OroKalipso",
  "name": "Oficinas configuraciones",

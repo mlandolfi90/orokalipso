@@ -8,11 +8,11 @@
  "field_order": [
   "section_break_fnvm",
   "title",
-  "oficina",
   "naming_series",
+  "oficina",
   "column_break_tlfw",
-  "fecha",
-  "hora",
+  "posting_date",
+  "posting_time",
   "datos_section",
   "obtener_disponible",
   "viruta_disponible",
@@ -23,15 +23,20 @@
   "almacen_predeterminado_analisis",
   "resultados_section",
   "peso_fundido",
+  "item_puro",
   "puras",
+  "almacen_destino",
   "pieza_disponible",
-  "almacen_de_destino",
   "column_break_piev",
   "calcular",
   "merma_porc",
   "ley_analitica",
   "ley_recuperable",
   "valoracion_unitaria_puras",
+  "documentos_relacionados_section",
+  "entrada_inventario",
+  "column_break_czko",
+  "inventario_orokalipso",
   "conexiones_tab",
   "amended_from"
  ],
@@ -64,18 +69,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "default": "Today",
-   "fieldname": "fecha",
-   "fieldtype": "Date",
-   "label": "Fecha"
-  },
-  {
-   "default": "Now",
-   "fieldname": "hora",
-   "fieldtype": "Time",
-   "label": "Hora"
-  },
-  {
    "fieldname": "conexiones_tab",
    "fieldtype": "Tab Break",
    "label": "Conexiones"
@@ -88,7 +81,8 @@
   {
    "fieldname": "viruta_disponible",
    "fieldtype": "Float",
-   "label": "Viruta Disponible a procesar en gr."
+   "label": "Viruta Disponible a procesar en gr.",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_znen",
@@ -126,7 +120,8 @@
    "fieldname": "ley_analitica",
    "fieldtype": "Float",
    "label": "Ley Analitica",
-   "precision": "2"
+   "precision": "2",
+   "reqd": 1
   },
   {
    "fieldname": "ley_recuperable",
@@ -154,20 +149,16 @@
    "read_only": 1
   },
   {
-   "fieldname": "almacen_de_destino",
-   "fieldtype": "Link",
-   "label": "Almacen de destino",
-   "options": "Warehouse"
-  },
-  {
    "fieldname": "valoracion_total",
    "fieldtype": "Currency",
-   "label": "Valoracion total en [USD]"
+   "label": "Valoracion total en [USD]",
+   "read_only": 1
   },
   {
    "fieldname": "valoracion_unitaria",
    "fieldtype": "Currency",
-   "label": "Valor por Unidad [gr] --> [USD]/[gr]"
+   "label": "Valor por Unidad [gr] --> [USD]/[gr]",
+   "read_only": 1
   },
   {
    "fieldname": "peso_fundido",
@@ -199,13 +190,62 @@
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Series",
-   "options": "PrVi.-"
+   "options": "ProcVir.-"
+  },
+  {
+   "fieldname": "item_puro",
+   "fieldtype": "Link",
+   "label": "Item procesado Oro puro ",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Fecha"
+  },
+  {
+   "default": "Now",
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "label": "Hora"
+  },
+  {
+   "fieldname": "documentos_relacionados_section",
+   "fieldtype": "Section Break",
+   "label": "Documentos Relacionados"
+  },
+  {
+   "fieldname": "entrada_inventario",
+   "fieldtype": "Link",
+   "label": "Entrada de inventario (Proceso de Fundicion)",
+   "options": "Stock Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "almacen_destino",
+   "fieldtype": "Link",
+   "label": "Almacen de destino",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_czko",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "inventario_orokalipso",
+   "fieldtype": "Link",
+   "label": "Inventario Orokalipso (Pieza Resultante)",
+   "options": "Inventario Orokalipso",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-27 10:46:53.615947",
+ "modified": "2024-11-27 19:00:41.879337",
  "modified_by": "Administrator",
  "module": "OroKalipso",
  "name": "Procesar Virutas",

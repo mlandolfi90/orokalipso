@@ -1,19 +1,39 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "naming_series:",
  "creation": "2024-11-25 08:28:10.879210",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_jfzd",
-  "fecha",
-  "hora",
+  "title",
+  "naming_series",
+  "posting_date",
+  "posting_time",
   "oficina",
+  "acronimo",
   "column_break_npkd",
-  "estatus",
+  "estatus_articulo",
+  "origen_del_articulo",
+  "tipo_articulo",
+  "documentos_relacionados_section",
+  "enlaces_erp_column",
+  "doctype_erp",
+  "documento_origen_erp",
+  "enlaces_orokalipso_column",
+  "doctype_orokalipso",
+  "documento_origen_orokalipso",
   "oro_puro_section",
-  "articulo_oro_puro",
+  "peso_fundido",
+  "ley_analitica",
+  "ley_recuperable",
+  "puras",
   "column_break_zmla",
+  "item_puro",
+  "almacen_destino",
+  "valoracion_unitaria",
+  "valoracion_total",
   "oro_amalgamado_section",
   "articulo_de_oro_amalgamado",
   "column_break_wpni",
@@ -40,23 +60,8 @@
    "search_index": 1
   },
   {
-   "fieldname": "fecha",
-   "fieldtype": "Date",
-   "label": "Fecha"
-  },
-  {
-   "fieldname": "hora",
-   "fieldtype": "Time",
-   "label": "Hora"
-  },
-  {
    "fieldname": "column_break_npkd",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "estatus",
-   "fieldtype": "Data",
-   "label": "Estatus"
   },
   {
    "fieldname": "conexiones_tab",
@@ -64,6 +69,7 @@
    "label": "Conexiones"
   },
   {
+   "depends_on": "eval: doc.tipo_articulo == \"Oro Amalgamado\"",
    "fieldname": "oro_amalgamado_section",
    "fieldtype": "Section Break",
    "label": "Oro Amalgamado"
@@ -98,34 +104,173 @@
    "label": "Total divisa"
   },
   {
+   "depends_on": "eval: doc.tipo_articulo == \"Oro Puro\"",
    "fieldname": "oro_puro_section",
    "fieldtype": "Section Break",
    "label": "Oro Puro"
   },
   {
-   "fieldname": "articulo_oro_puro",
-   "fieldtype": "Link",
-   "label": "Articulo Oro Puro",
-   "options": "Item"
-  },
-  {
    "fieldname": "oficina",
    "fieldtype": "Link",
-   "label": "Oficina ",
+   "label": "Oficina de resguardo",
    "options": "Oficinas configuraciones"
   },
   {
    "fieldname": "column_break_zmla",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "documentos_relacionados_section",
+   "fieldtype": "Section Break",
+   "label": "Documentos Relacionados"
+  },
+  {
+   "fieldname": "enlaces_erp_column",
+   "fieldtype": "Column Break",
+   "label": "Enlaces ERP"
+  },
+  {
+   "fieldname": "doctype_erp",
+   "fieldtype": "Link",
+   "label": "Doctype Relacionado",
+   "options": "DocType",
+   "read_only": 1
+  },
+  {
+   "fieldname": "enlaces_orokalipso_column",
+   "fieldtype": "Column Break",
+   "label": "Enlaces OroKalipso"
+  },
+  {
+   "fieldname": "doctype_orokalipso",
+   "fieldtype": "Link",
+   "label": "Doctype Orokalipso",
+   "options": "DocType",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Title",
+   "no_copy": 1,
+   "print_hide": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series ",
+   "options": "Inv-OroK.-"
+  },
+  {
+   "fieldname": "documento_origen_erp",
+   "fieldtype": "Dynamic Link",
+   "label": "Documento Origen ERP",
+   "options": "doctype_erp",
+   "read_only": 1
+  },
+  {
+   "fieldname": "documento_origen_orokalipso",
+   "fieldtype": "Dynamic Link",
+   "label": "Documento Origen OroKalipso",
+   "options": "doctype_orokalipso",
+   "read_only": 1
+  },
+  {
+   "fieldname": "estatus_articulo",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Estatus del Articulo",
+   "options": "Disponible\nProcesado\nVendido\nTransferido"
+  },
+  {
+   "fieldname": "origen_del_articulo",
+   "fieldtype": "Select",
+   "label": "Origen del Articulo",
+   "options": "Compra\nProcesado\nTransferido"
+  },
+  {
+   "fieldname": "tipo_articulo",
+   "fieldtype": "Select",
+   "label": "Tipo de Articulo",
+   "options": "Oro Amalgamado\nOro Puro\nPrenda Rota\nPrenda Entera"
+  },
+  {
+   "fieldname": "peso_fundido",
+   "fieldtype": "Float",
+   "label": "Peso en gr.",
+   "precision": "2"
+  },
+  {
+   "fieldname": "ley_analitica",
+   "fieldtype": "Float",
+   "label": "Ley Analitica",
+   "precision": "2"
+  },
+  {
+   "fieldname": "ley_recuperable",
+   "fieldtype": "Float",
+   "label": "Ley Recuperable",
+   "precision": "2"
+  },
+  {
+   "fieldname": "puras",
+   "fieldtype": "Float",
+   "label": "Puras en gr",
+   "precision": "2"
+  },
+  {
+   "fieldname": "almacen_destino",
+   "fieldtype": "Link",
+   "label": "Almacen Destino",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "valoracion_total",
+   "fieldtype": "Currency",
+   "label": "Valoracion total",
+   "precision": "2"
+  },
+  {
+   "fieldname": "valoracion_unitaria",
+   "fieldtype": "Currency",
+   "label": "Valoracion unitaria [USD]/gr",
+   "precision": "2"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Fecha"
+  },
+  {
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "label": "Hora"
+  },
+  {
+   "fieldname": "acronimo",
+   "fieldtype": "Data",
+   "label": "Acronimo"
+  },
+  {
+   "fieldname": "item_puro",
+   "fieldtype": "Link",
+   "label": "Articulo Oro Puro",
+   "options": "Item"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-25 09:03:52.853408",
+ "modified": "2024-11-27 19:57:53.052816",
  "modified_by": "Administrator",
  "module": "OroKalipso",
  "name": "Inventario Orokalipso",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {
