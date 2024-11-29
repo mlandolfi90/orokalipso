@@ -9,11 +9,12 @@
   "section_break_jfzd",
   "title",
   "naming_series",
-  "posting_date",
-  "posting_time",
   "oficina",
   "acronimo",
   "column_break_npkd",
+  "posting_date",
+  "posting_time",
+  "column_break_jdcm",
   "estatus_articulo",
   "origen_del_articulo",
   "tipo_articulo",
@@ -28,19 +29,21 @@
   "peso_fundido",
   "ley_analitica",
   "ley_recuperable",
-  "puras",
   "column_break_zmla",
+  "puras",
+  "valoracion_unitaria_puro",
+  "valoracion_total_puro",
+  "column_break_nhvj",
   "item_puro",
-  "almacen_destino",
-  "valoracion_unitaria",
-  "valoracion_total",
+  "almacen_destino_puro",
   "oro_amalgamado_section",
-  "articulo_de_oro_amalgamado",
+  "peso_amalgamado",
   "column_break_wpni",
-  "peso_en_gr",
+  "valoracion_unitaria_amalgamado",
+  "valoracion_total_amalgamado",
   "column_break_mvet",
-  "precio",
-  "total_divisa",
+  "articulo_de_oro_amalgamado",
+  "almacen_destino_amalgamado",
   "conexiones_tab",
   "amended_from"
  ],
@@ -85,29 +88,14 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "peso_en_gr",
-   "fieldtype": "Float",
-   "label": "Peso en gr"
-  },
-  {
    "fieldname": "column_break_mvet",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "precio",
-   "fieldtype": "Currency",
-   "label": "Precio"
-  },
-  {
-   "fieldname": "total_divisa",
-   "fieldtype": "Currency",
-   "label": "Total divisa"
-  },
-  {
-   "depends_on": "eval: doc.tipo_articulo == \"Oro Puro\"",
+   "depends_on": "eval: doc.tipo_articulo == \"Oro Puro\" || doc.tipo_articulo == \"Prenda\"",
    "fieldname": "oro_puro_section",
    "fieldtype": "Section Break",
-   "label": "Oro Puro"
+   "label": "Oro Puro/Prendas"
   },
   {
    "fieldname": "oficina",
@@ -185,7 +173,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Estatus del Articulo",
-   "options": "Disponible\nProcesado\nVendido\nTransferido"
+   "options": "Disponible\nProcesado\nVendido\nTransferido\nCancelado"
   },
   {
    "fieldname": "origen_del_articulo",
@@ -197,7 +185,7 @@
    "fieldname": "tipo_articulo",
    "fieldtype": "Select",
    "label": "Tipo de Articulo",
-   "options": "Oro Amalgamado\nOro Puro\nPrenda Rota\nPrenda Entera"
+   "options": "Oro Puro\nOro Amalgamado\nPrenda"
   },
   {
    "fieldname": "peso_fundido",
@@ -224,24 +212,6 @@
    "precision": "2"
   },
   {
-   "fieldname": "almacen_destino",
-   "fieldtype": "Link",
-   "label": "Almacen Destino",
-   "options": "Warehouse"
-  },
-  {
-   "fieldname": "valoracion_total",
-   "fieldtype": "Currency",
-   "label": "Valoracion total",
-   "precision": "2"
-  },
-  {
-   "fieldname": "valoracion_unitaria",
-   "fieldtype": "Currency",
-   "label": "Valoracion unitaria [USD]/gr",
-   "precision": "2"
-  },
-  {
    "fieldname": "posting_date",
    "fieldtype": "Date",
    "label": "Fecha"
@@ -259,14 +229,63 @@
   {
    "fieldname": "item_puro",
    "fieldtype": "Link",
-   "label": "Articulo Oro Puro",
+   "label": "Articulo Oro Puro/Prenda",
    "options": "Item"
+  },
+  {
+   "fieldname": "valoracion_unitaria_puro",
+   "fieldtype": "Currency",
+   "label": "Valoracion unitaria [USD]/gr",
+   "precision": "2"
+  },
+  {
+   "fieldname": "valoracion_total_puro",
+   "fieldtype": "Currency",
+   "label": "Valoracion total",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_nhvj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "almacen_destino_puro",
+   "fieldtype": "Link",
+   "label": "Almacen Destino Puro/Prenda",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "peso_amalgamado",
+   "fieldtype": "Float",
+   "label": "Peso en gr"
+  },
+  {
+   "fieldname": "valoracion_unitaria_amalgamado",
+   "fieldtype": "Currency",
+   "label": "Valoracion unitaria [USD]/gr",
+   "precision": "2"
+  },
+  {
+   "fieldname": "valoracion_total_amalgamado",
+   "fieldtype": "Currency",
+   "label": "Valoracion total",
+   "precision": "2"
+  },
+  {
+   "fieldname": "almacen_destino_amalgamado",
+   "fieldtype": "Link",
+   "label": "Almacen Destino amalgamado",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "column_break_jdcm",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-27 19:57:53.052816",
+ "modified": "2024-11-29 18:16:24.023115",
  "modified_by": "Administrator",
  "module": "OroKalipso",
  "name": "Inventario Orokalipso",

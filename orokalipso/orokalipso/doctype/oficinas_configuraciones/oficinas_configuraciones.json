@@ -33,7 +33,11 @@
   "almacen_de_oro_amalgamado",
   "column_break_pacu",
   "item_puro",
-  "almacen_de_oro_puro"
+  "almacen_de_oro_puro",
+  "centro_costos_oro",
+  "column_break_nlpg",
+  "item_prendas",
+  "almacen_de_oro_prendas"
  ],
  "fields": [
   {
@@ -186,11 +190,33 @@
    "fieldtype": "Link",
    "label": "Compa\u00f1ia",
    "options": "Company"
+  },
+  {
+   "fieldname": "centro_costos_oro",
+   "fieldtype": "Link",
+   "label": "Centro de Costos Oro",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "column_break_nlpg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "almacen_de_oro_prendas",
+   "fieldtype": "Link",
+   "label": "Almacen de Oro Prendas",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "item_prendas",
+   "fieldtype": "Link",
+   "label": "Item Oro prendas",
+   "options": "Item"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-27 13:24:18.580368",
+ "modified": "2024-11-29 16:42:18.323535",
  "modified_by": "Administrator",
  "module": "OroKalipso",
  "name": "Oficinas configuraciones",
