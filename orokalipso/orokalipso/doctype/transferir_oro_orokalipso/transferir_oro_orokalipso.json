@@ -1,0 +1,192 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-30 11:55:13.925954",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "posting_date",
+  "posting_time",
+  "column_break_xegn",
+  "oficina_origen",
+  "oficina_destino",
+  "section_break_tips",
+  "obtener_piezas",
+  "piezas_de_inventario_section",
+  "items",
+  "totalizacion_section",
+  "cantidad_amalgamado",
+  "total_peso_amalgamado",
+  "precio_promedio_amalgamado",
+  "valoracion_amalgamado",
+  "column_break_lbfw",
+  "cantidad_puras",
+  "total_peso_puras",
+  "ley_prom_puras",
+  "total_puras",
+  "precio_promedio_puras",
+  "valoracion_puras",
+  "tab_2_tab",
+  "section_break_qxnj",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_qxnj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Transferir Oro Orokalipso",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Fecha"
+  },
+  {
+   "default": "Now",
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "label": "Hora"
+  },
+  {
+   "fieldname": "tab_2_tab",
+   "fieldtype": "Tab Break",
+   "label": "Tab 2"
+  },
+  {
+   "fieldname": "column_break_xegn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "oficina_origen",
+   "fieldtype": "Link",
+   "label": "Oficina de Origen",
+   "options": "Oficinas configuraciones"
+  },
+  {
+   "fieldname": "oficina_destino",
+   "fieldtype": "Link",
+   "label": "Oficina Destino",
+   "options": "Oficinas configuraciones"
+  },
+  {
+   "fieldname": "piezas_de_inventario_section",
+   "fieldtype": "Section Break",
+   "label": "Piezas de Inventario"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "piezas",
+   "options": "Transferir Oro Items"
+  },
+  {
+   "fieldname": "totalizacion_section",
+   "fieldtype": "Section Break",
+   "label": "Totalizacion"
+  },
+  {
+   "fieldname": "cantidad_amalgamado",
+   "fieldtype": "Int",
+   "label": "Cantidad de Piezas Amalgamado"
+  },
+  {
+   "fieldname": "total_peso_amalgamado",
+   "fieldtype": "Float",
+   "label": "Total Peso Amalgamado",
+   "precision": "2"
+  },
+  {
+   "fieldname": "precio_promedio_amalgamado",
+   "fieldtype": "Currency",
+   "label": "Precio Promedio Amalgamado [USD]/gr",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_lbfw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "valoracion_amalgamado",
+   "fieldtype": "Currency",
+   "label": "Total Amalgamado en [USD] ",
+   "precision": "2"
+  },
+  {
+   "fieldname": "total_peso_puras",
+   "fieldtype": "Float",
+   "label": "Total Peso Fundido"
+  },
+  {
+   "fieldname": "total_puras",
+   "fieldtype": "Float",
+   "label": "Total Puras"
+  },
+  {
+   "fieldname": "precio_promedio_puras",
+   "fieldtype": "Currency",
+   "label": "Precio Promedio Puras/Prendas"
+  },
+  {
+   "fieldname": "valoracion_puras",
+   "fieldtype": "Currency",
+   "label": "Total Puras en [USD]",
+   "precision": "2"
+  },
+  {
+   "fieldname": "section_break_tips",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "obtener_piezas",
+   "fieldtype": "Button",
+   "label": "Obtener Piezas Disponibles"
+  },
+  {
+   "fieldname": "cantidad_puras",
+   "fieldtype": "Int",
+   "label": "Cantidad de Piezas Puras/Prendas"
+  },
+  {
+   "fieldname": "ley_prom_puras",
+   "fieldtype": "Float",
+   "label": "Ley Promedio Estimada",
+   "precision": "2"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-30 14:08:50.108685",
+ "modified_by": "Administrator",
+ "module": "OroKalipso",
+ "name": "Transferir Oro Orokalipso",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

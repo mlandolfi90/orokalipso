@@ -1,0 +1,193 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-30 12:05:25.975472",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "detalles_del_documento_section",
+  "pieza_de_inventario",
+  "column_break_kjgu",
+  "tipo_articulo",
+  "datos_de_puro_section",
+  "peso_fundido",
+  "ley_analitica",
+  "ley_recuperable",
+  "column_break_meby",
+  "puras",
+  "valoracion_unitaria_puro",
+  "valoracion_total_puro",
+  "column_break_xxza",
+  "item_puro",
+  "almacen_destino_puro",
+  "oro_amalgamado_section",
+  "peso_amalgamado",
+  "column_break_hatq",
+  "valoracion_unitaria_amalgamado",
+  "valoracion_total_amalgamado",
+  "column_break_kasp",
+  "articulo_de_oro_amalgamado",
+  "almacen_destino_amalgamado"
+ ],
+ "fields": [
+  {
+   "fieldname": "detalles_del_documento_section",
+   "fieldtype": "Section Break",
+   "label": "Detalles del Documento"
+  },
+  {
+   "fieldname": "pieza_de_inventario",
+   "fieldtype": "Link",
+   "label": "Pieza de Inventario",
+   "options": "Inventario Orokalipso",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_kjgu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: doc.tipo_articulo == \"Oro Puro\" || doc.tipo_articulo == \"Prenda\"",
+   "fieldname": "datos_de_puro_section",
+   "fieldtype": "Section Break",
+   "label": "Oro Puro/prenda"
+  },
+  {
+   "fetch_from": "pieza_de_inventario.peso_fundido",
+   "fieldname": "peso_fundido",
+   "fieldtype": "Float",
+   "label": "Peso ",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "pieza_de_inventario.ley_analitica",
+   "fieldname": "ley_analitica",
+   "fieldtype": "Float",
+   "label": "Ley Analitica",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "pieza_de_inventario.ley_recuperable",
+   "fieldname": "ley_recuperable",
+   "fieldtype": "Float",
+   "label": "Ley Recuperable",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_meby",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "pieza_de_inventario.puras",
+   "fieldname": "puras",
+   "fieldtype": "Float",
+   "label": "Puras",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "valoracion_unitaria_puro",
+   "fieldtype": "Currency",
+   "label": "Valoracion unitaria [USD]/gr",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "valoracion_total_puro",
+   "fieldtype": "Currency",
+   "label": "Valoracion total",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_xxza",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item_puro",
+   "fieldtype": "Link",
+   "label": "Articulo Oro Puro/Prenda",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "almacen_destino_puro",
+   "fieldtype": "Link",
+   "label": "Almacen Destino Puro/Prenda",
+   "options": "Warehouse",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "pieza_de_inventario.tipo_articulo",
+   "fieldname": "tipo_articulo",
+   "fieldtype": "Data",
+   "label": "Tipo de Articulo",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval: doc.tipo_articulo == \"Oro Amalgamado\"",
+   "fieldname": "oro_amalgamado_section",
+   "fieldtype": "Section Break",
+   "label": "Oro Amalgamado"
+  },
+  {
+   "fieldname": "peso_amalgamado",
+   "fieldtype": "Float",
+   "label": "Peso en gr",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_hatq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "valoracion_unitaria_amalgamado",
+   "fieldtype": "Currency",
+   "label": "Valoracion unitaria [USD]/gr",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "valoracion_total_amalgamado",
+   "fieldtype": "Currency",
+   "label": "Valoracion total",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_kasp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "articulo_de_oro_amalgamado",
+   "fieldtype": "Link",
+   "label": "Articulo de Oro Amalgamado",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "almacen_destino_amalgamado",
+   "fieldtype": "Link",
+   "label": "Almacen Destino amalgamado",
+   "options": "Warehouse",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-11-30 13:26:12.299552",
+ "modified_by": "Administrator",
+ "module": "OroKalipso",
+ "name": "Transferir Oro Items",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
