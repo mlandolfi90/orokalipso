@@ -1,15 +1,21 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "naming_series:",
  "creation": "2024-11-30 11:55:13.925954",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "title",
+  "naming_series",
   "posting_date",
   "posting_time",
   "column_break_xegn",
   "oficina_origen",
   "oficina_destino",
+  "almacen_destino_amalgamado",
+  "almacen_destino_puro",
+  "almacen_destino_prendas",
   "section_break_tips",
   "obtener_piezas",
   "piezas_de_inventario_section",
@@ -161,15 +167,54 @@
    "fieldtype": "Float",
    "label": "Ley Promedio Estimada",
    "precision": "2"
+  },
+  {
+   "fetch_from": "oficina_destino.almacen_de_oro_amalgamado",
+   "fieldname": "almacen_destino_amalgamado",
+   "fieldtype": "Link",
+   "label": "Almacen Destino Amalgamado",
+   "options": "Warehouse",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "oficina_destino.almacen_de_oro_puro",
+   "fieldname": "almacen_destino_puro",
+   "fieldtype": "Link",
+   "label": "Almacen Destino Puro",
+   "options": "Warehouse",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "oficina_destino.almacen_de_oro_prendas",
+   "fieldname": "almacen_destino_prendas",
+   "fieldtype": "Link",
+   "label": "Almacen Destino Prendas",
+   "options": "Warehouse",
+   "read_only": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "TrfOro.-"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Title",
+   "print_hide": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-30 14:08:50.108685",
+ "modified": "2024-12-02 14:41:55.803114",
  "modified_by": "Administrator",
  "module": "OroKalipso",
  "name": "Transferir Oro Orokalipso",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {

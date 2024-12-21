@@ -1,0 +1,42 @@
+{
+ "actions": [],
+ "creation": "2024-12-05 08:46:25.086812",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "oficina",
+  "column_break_lulh",
+  "divisa"
+ ],
+ "fields": [
+  {
+   "fieldname": "oficina",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Oficina",
+   "options": "Oficinas configuraciones"
+  },
+  {
+   "fieldname": "column_break_lulh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "divisa",
+   "fieldtype": "Link",
+   "label": "Divisa de la moneda",
+   "options": "Currency"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2024-12-05 09:30:20.005948",
+ "modified_by": "Administrator",
+ "module": "OroKalipso",
+ "name": "Mode of Payment Oficinas",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

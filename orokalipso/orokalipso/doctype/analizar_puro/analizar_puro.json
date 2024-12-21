@@ -31,6 +31,7 @@
   "ley_analitica",
   "ley_recuperable",
   "secuencia_maquina",
+  "tipo_muestra",
   "column_break_jxne",
   "en_oficina",
   "descuento_viruta",
@@ -298,7 +299,7 @@
    "depends_on": "eval: doc.cobro_en_divisas == 0",
    "fieldname": "viruta_predeterminado",
    "fieldtype": "Float",
-   "label": "Monto en virutas predeterminad en [gr]",
+   "label": "Monto en virutas predeterminado en [gr]",
    "precision": "2",
    "reqd": 1
   },
@@ -489,7 +490,8 @@
   {
    "fieldname": "precio_viruta",
    "fieldtype": "Currency",
-   "label": "Precio Estimado de 1 gr de Viruta en [USD]"
+   "label": "Precio Estimado de 1 gr de Viruta en [USD]",
+   "read_only": 1
   },
   {
    "default": "0",
@@ -504,12 +506,19 @@
    "label": "Peso de barra en gr. (Despues de descontar Viruta)",
    "precision": "2",
    "read_only": 1
+  },
+  {
+   "fieldname": "tipo_muestra",
+   "fieldtype": "Select",
+   "label": "Tipo de Muestra",
+   "options": "BARRA\nVIRUTA",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-25 09:53:53.252096",
+ "modified": "2024-12-15 21:35:43.133717",
  "modified_by": "Administrator",
  "module": "OroKalipso",
  "name": "Analizar Puro",

@@ -228,6 +228,7 @@
    "fieldtype": "Link",
    "label": "Almacen de destino",
    "options": "Warehouse",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -245,7 +246,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-28 10:11:37.694888",
+ "modified": "2024-12-02 09:30:07.730361",
  "modified_by": "Administrator",
  "module": "OroKalipso",
  "name": "Procesar Virutas",

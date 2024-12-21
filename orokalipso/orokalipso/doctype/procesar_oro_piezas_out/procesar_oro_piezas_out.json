@@ -1,0 +1,143 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-02 16:35:29.737998",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "pieza_de_inventario",
+  "column_break_aznn",
+  "tipo_articulo",
+  "section_break_yqvs",
+  "calcular",
+  "section_break_gllh",
+  "peso_fundido",
+  "ley_analitica",
+  "column_break_ceqd",
+  "ley_recuperable",
+  "puras",
+  "column_break_wfbx",
+  "item_puro",
+  "almacen_destino_puro",
+  "valoracion_segun_sistema_section",
+  "valoracion_unitaria_sistema",
+  "column_break_lqsg",
+  "valoracion_total_sistema"
+ ],
+ "fields": [
+  {
+   "fieldname": "pieza_de_inventario",
+   "fieldtype": "Link",
+   "label": "Pieza de Inventario",
+   "options": "Inventario Orokalipso",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_aznn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Oro Puro",
+   "fieldname": "tipo_articulo",
+   "fieldtype": "Data",
+   "label": "Tipo de Ariculo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_gllh",
+   "fieldtype": "Section Break",
+   "label": "Oro Puro/Prenda"
+  },
+  {
+   "fieldname": "peso_fundido",
+   "fieldtype": "Float",
+   "label": "Peso",
+   "precision": "2"
+  },
+  {
+   "fieldname": "ley_analitica",
+   "fieldtype": "Float",
+   "label": "Ley Analitica",
+   "precision": "2"
+  },
+  {
+   "fieldname": "ley_recuperable",
+   "fieldtype": "Float",
+   "label": "Ley Recuperable",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ceqd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "puras",
+   "fieldtype": "Float",
+   "label": "Puras",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_wfbx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item_puro",
+   "fieldtype": "Link",
+   "label": "Articulo Oro Puro/Prenda",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "almacen_destino_puro",
+   "fieldtype": "Link",
+   "label": "Almacen Destino Puro/Prenda",
+   "options": "Warehouse",
+   "read_only": 1
+  },
+  {
+   "fieldname": "valoracion_segun_sistema_section",
+   "fieldtype": "Section Break",
+   "label": "Valoracion Segun Sistema"
+  },
+  {
+   "fieldname": "valoracion_unitaria_sistema",
+   "fieldtype": "Currency",
+   "label": "Tasa de Valoracion Segun Sistema",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_lqsg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "valoracion_total_sistema",
+   "fieldtype": "Currency",
+   "label": "Valoracion Total Segun Sistema",
+   "precision": "2"
+  },
+  {
+   "fieldname": "section_break_yqvs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "calcular",
+   "fieldtype": "Button",
+   "label": "Calcular"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-12-03 12:45:00.098109",
+ "modified_by": "Administrator",
+ "module": "OroKalipso",
+ "name": "Procesar Oro piezas out",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

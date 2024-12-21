@@ -1,45 +1,39 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-11-30 12:05:25.975472",
+ "creation": "2024-12-06 13:20:53.232884",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "detalles_del_documento_section",
   "pieza_de_inventario",
-  "column_break_kjgu",
+  "column_break_aznn",
   "tipo_articulo",
-  "datos_de_puro_section",
+  "section_break_gllh",
   "peso_fundido",
   "ley_analitica",
   "ley_recuperable",
-  "column_break_meby",
+  "column_break_ceqd",
   "puras",
   "valoracion_unitaria_puro",
   "valoracion_total_puro",
-  "column_break_xxza",
+  "column_break_wfbx",
   "item_puro",
   "almacen_destino_puro",
   "oro_amalgamado_section",
   "peso_amalgamado",
-  "column_break_hatq",
+  "column_break_sqnx",
   "valoracion_unitaria_amalgamado",
   "valoracion_total_amalgamado",
-  "column_break_kasp",
+  "column_break_uazs",
   "articulo_de_oro_amalgamado",
   "almacen_destino_amalgamado",
-  "relacion_con_documentos_section",
-  "documento_transferencia",
-  "column_break_hdwd",
-  "pieza_de_inventario_destino"
+  "valoracion_segun_sistema_section",
+  "valoracion_unitaria_sistema",
+  "column_break_lqsg",
+  "valoracion_total_sistema"
  ],
  "fields": [
-  {
-   "fieldname": "detalles_del_documento_section",
-   "fieldtype": "Section Break",
-   "label": "Detalles del Documento"
-  },
   {
    "fieldname": "pieza_de_inventario",
    "fieldtype": "Link",
@@ -48,25 +42,28 @@
    "read_only": 1
   },
   {
-   "fieldname": "column_break_kjgu",
+   "fieldname": "column_break_aznn",
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval: doc.tipo_articulo == \"Oro Puro\" || doc.tipo_articulo == \"Prenda\"",
-   "fieldname": "datos_de_puro_section",
-   "fieldtype": "Section Break",
-   "label": "Oro Puro/prenda"
+   "fieldname": "tipo_articulo",
+   "fieldtype": "Data",
+   "label": "Tipo de Ariculo",
+   "read_only": 1
   },
   {
-   "fetch_from": "pieza_de_inventario.peso_fundido",
+   "fieldname": "section_break_gllh",
+   "fieldtype": "Section Break",
+   "label": "Oro Puro/Prenda"
+  },
+  {
    "fieldname": "peso_fundido",
    "fieldtype": "Float",
-   "label": "Peso ",
+   "label": "Peso",
    "precision": "2",
    "read_only": 1
   },
   {
-   "fetch_from": "pieza_de_inventario.ley_analitica",
    "fieldname": "ley_analitica",
    "fieldtype": "Float",
    "label": "Ley Analitica",
@@ -74,7 +71,6 @@
    "read_only": 1
   },
   {
-   "fetch_from": "pieza_de_inventario.ley_recuperable",
    "fieldname": "ley_recuperable",
    "fieldtype": "Float",
    "label": "Ley Recuperable",
@@ -82,11 +78,10 @@
    "read_only": 1
   },
   {
-   "fieldname": "column_break_meby",
+   "fieldname": "column_break_ceqd",
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "pieza_de_inventario.puras",
    "fieldname": "puras",
    "fieldtype": "Float",
    "label": "Puras",
@@ -108,7 +103,7 @@
    "read_only": 1
   },
   {
-   "fieldname": "column_break_xxza",
+   "fieldname": "column_break_wfbx",
    "fieldtype": "Column Break"
   },
   {
@@ -126,14 +121,6 @@
    "read_only": 1
   },
   {
-   "fetch_from": "pieza_de_inventario.tipo_articulo",
-   "fieldname": "tipo_articulo",
-   "fieldtype": "Data",
-   "label": "Tipo de Articulo",
-   "read_only": 1
-  },
-  {
-   "depends_on": "eval: doc.tipo_articulo == \"Oro Amalgamado\"",
    "fieldname": "oro_amalgamado_section",
    "fieldtype": "Section Break",
    "label": "Oro Amalgamado"
@@ -142,11 +129,10 @@
    "fieldname": "peso_amalgamado",
    "fieldtype": "Float",
    "label": "Peso en gr",
-   "precision": "2",
    "read_only": 1
   },
   {
-   "fieldname": "column_break_hatq",
+   "fieldname": "column_break_sqnx",
    "fieldtype": "Column Break"
   },
   {
@@ -164,7 +150,7 @@
    "read_only": 1
   },
   {
-   "fieldname": "column_break_kasp",
+   "fieldname": "column_break_uazs",
    "fieldtype": "Column Break"
   },
   {
@@ -182,34 +168,36 @@
    "read_only": 1
   },
   {
-   "fieldname": "relacion_con_documentos_section",
+   "fieldname": "valoracion_segun_sistema_section",
    "fieldtype": "Section Break",
-   "label": "Relacion con Documentos"
+   "label": "Valoracion Segun Sistema"
   },
   {
-   "fieldname": "documento_transferencia",
-   "fieldtype": "Link",
-   "label": "Documento ERP transferencia",
-   "options": "Stock Entry"
+   "fieldname": "valoracion_unitaria_sistema",
+   "fieldtype": "Currency",
+   "label": "Tasa de Valoracion Segun Sistema",
+   "precision": "2",
+   "read_only": 1
   },
   {
-   "fieldname": "column_break_hdwd",
+   "fieldname": "column_break_lqsg",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "pieza_de_inventario_destino",
-   "fieldtype": "Link",
-   "label": "Pieza de Inventario Destino",
-   "options": "Inventario Orokalipso"
+   "fieldname": "valoracion_total_sistema",
+   "fieldtype": "Currency",
+   "label": "Valoracion Total Segun Sistema",
+   "precision": "2",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-12-02 10:08:58.983011",
+ "modified": "2024-12-06 13:20:53.232884",
  "modified_by": "Administrator",
  "module": "OroKalipso",
- "name": "Transferir Oro Items",
+ "name": "Factura Ventas Piezas Out",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "modified",

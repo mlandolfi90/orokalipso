@@ -1,0 +1,410 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-12-02 15:54:17.236438",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_fmah",
+  "title",
+  "naming_series",
+  "oficina",
+  "column_break_pulv",
+  "posting_date",
+  "posting_time",
+  "column_break_yomv",
+  "tipo_articulo",
+  "almacen_destino",
+  "almacen_oro_amalgamado",
+  "item_oro_amalgamado",
+  "almacen_oro_puro",
+  "item_oro_puro",
+  "almacen_oro_prendas",
+  "item_oro_prendas",
+  "documentos_relacionados_section",
+  "entrada_inventario",
+  "section_break_grpt",
+  "obtener_piezas",
+  "piezas_entrantes_section",
+  "piezas_in",
+  "datos_piezas_entrantes_section",
+  "cantidad_piezas_procesadas",
+  "peso_total_procesado",
+  "puras_total_procesadas",
+  "ley_recuperable_promedio",
+  "column_break_zllv",
+  "valoracion_unitaria",
+  "valoracion_total",
+  "column_break_opei",
+  "valoracion_unitaria_sistema",
+  "valoracion_total_sistema",
+  "piezas_resultantes_section",
+  "piezas_out",
+  "datos_resultante_section",
+  "peso_resultante",
+  "puras_resultantes",
+  "ley_resultante",
+  "column_break_nffe",
+  "diferencia_de_peso",
+  "merma_peso_porc",
+  "diferencia_puras",
+  "merma_puras_porc",
+  "column_break_gulu",
+  "valoracion_unitaria_resultante",
+  "valoracion_total_resultante",
+  "valoracion_unitaria_resultante_sistema",
+  "valoracion_total_resultante_sistema",
+  "conexiones_tab",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_fmah",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Procesar Oro Orokalipso",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "Proc.Oro.-"
+  },
+  {
+   "fieldname": "column_break_pulv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Dia"
+  },
+  {
+   "default": "Now",
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "label": "Hora"
+  },
+  {
+   "fieldname": "conexiones_tab",
+   "fieldtype": "Tab Break",
+   "label": "conexiones"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Title"
+  },
+  {
+   "fieldname": "oficina",
+   "fieldtype": "Link",
+   "label": "Oficina de Procesamiento",
+   "options": "Oficinas configuraciones"
+  },
+  {
+   "fieldname": "tipo_articulo",
+   "fieldtype": "Select",
+   "label": "Tipo de Material a Procesar",
+   "options": "Oro Amalgamado\nOro Puro\nOro Prenda"
+  },
+  {
+   "fieldname": "piezas_entrantes_section",
+   "fieldtype": "Section Break",
+   "label": "Piezas Entrantes"
+  },
+  {
+   "fieldname": "datos_piezas_entrantes_section",
+   "fieldtype": "Section Break",
+   "label": "Datos Piezas Entrantes"
+  },
+  {
+   "fieldname": "peso_total_procesado",
+   "fieldtype": "Float",
+   "label": "Peso total Procesado",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ley_recuperable_promedio",
+   "fieldtype": "Float",
+   "label": "Ley Recuperable Promedio",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_zllv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "valoracion_unitaria",
+   "fieldtype": "Currency",
+   "label": "Valoracion Unitaria Segun Piezas [USD]/gr",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "valoracion_total",
+   "fieldtype": "Currency",
+   "label": "Valoracion Total Segun Piezas [USD]",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_opei",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "valoracion_total_sistema",
+   "fieldtype": "Currency",
+   "label": "Valoracion Total Segun Sistema [USD]",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_yomv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "piezas_in",
+   "fieldtype": "Table",
+   "label": "piezas",
+   "options": "Procesar Oro piezas in"
+  },
+  {
+   "fieldname": "piezas_resultantes_section",
+   "fieldtype": "Section Break",
+   "label": "Piezas Resultantes"
+  },
+  {
+   "fieldname": "piezas_out",
+   "fieldtype": "Table",
+   "label": "Piezas",
+   "options": "Procesar Oro piezas out"
+  },
+  {
+   "fieldname": "datos_resultante_section",
+   "fieldtype": "Section Break",
+   "label": "Datos Resultantes"
+  },
+  {
+   "fieldname": "peso_resultante",
+   "fieldtype": "Float",
+   "label": "Peso Resultante",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "puras_resultantes",
+   "fieldtype": "Float",
+   "label": "Puras Resultantes",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_nffe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "diferencia_de_peso",
+   "fieldtype": "Float",
+   "label": "Diferencia de Peso (final-inicio)",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "diferencia_puras",
+   "fieldtype": "Float",
+   "label": "Diferencia Puras (final-inicio)",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_gulu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "valoracion_unitaria_resultante",
+   "fieldtype": "Currency",
+   "label": "Valoracion Unitaria Resultante [USD]/gr",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "valoracion_total_resultante",
+   "fieldtype": "Currency",
+   "label": "Valoracion Total Resultante",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_grpt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "obtener_piezas",
+   "fieldtype": "Button",
+   "label": "Obtener Piezas a procesar"
+  },
+  {
+   "fetch_from": "oficina.almacen_de_oro_puro",
+   "fieldname": "almacen_destino",
+   "fieldtype": "Link",
+   "label": "Almacen Oro Resultante",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "cantidad_piezas_procesadas",
+   "fieldtype": "Int",
+   "label": "Cantidad de Piezas Procesadas",
+   "read_only": 1
+  },
+  {
+   "fieldname": "puras_total_procesadas",
+   "fieldtype": "Float",
+   "label": "Puras Total Procesadas",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "oficina.almacen_de_oro_amalgamado",
+   "fieldname": "almacen_oro_amalgamado",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Almacen Oro amalgamado",
+   "options": "Warehouse"
+  },
+  {
+   "fetch_from": "oficina.almacen_de_oro_prendas",
+   "fieldname": "almacen_oro_prendas",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Almacen Oro prendas",
+   "options": "Warehouse"
+  },
+  {
+   "fetch_from": "oficina.almacen_de_oro_puro",
+   "fieldname": "almacen_oro_puro",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Almacen Oro puro",
+   "options": "Warehouse"
+  },
+  {
+   "fetch_from": "oficina.item_amalgamado",
+   "fieldname": "item_oro_amalgamado",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Item Oro Amalgamado",
+   "options": "Item"
+  },
+  {
+   "fetch_from": "oficina.item_puro",
+   "fieldname": "item_oro_puro",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Item Oro Puro",
+   "options": "Item"
+  },
+  {
+   "fetch_from": "oficina.item_prendas",
+   "fieldname": "item_oro_prendas",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Item Oro Prendas",
+   "options": "Item"
+  },
+  {
+   "fieldname": "valoracion_unitaria_sistema",
+   "fieldtype": "Currency",
+   "label": "Valoracion Unitaria Segun Sistema [USD]/gr",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ley_resultante",
+   "fieldtype": "Float",
+   "label": "Ley Resultante",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "merma_peso_porc",
+   "fieldtype": "Percent",
+   "label": "% de Merma Peso",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "merma_puras_porc",
+   "fieldtype": "Percent",
+   "label": "% de Merma Puras",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "valoracion_unitaria_resultante_sistema",
+   "fieldtype": "Currency",
+   "label": "Valoracion Unitaria Resultante [USD]/gr Sistema",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "valoracion_total_resultante_sistema",
+   "fieldtype": "Currency",
+   "label": "Valoracion Total Resultante Sistema",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "documentos_relacionados_section",
+   "fieldtype": "Section Break",
+   "label": "Documentos Relacionados"
+  },
+  {
+   "fieldname": "entrada_inventario",
+   "fieldtype": "Link",
+   "label": "Documento de Procesamiento ERP",
+   "options": "Stock Entry",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-12-04 20:13:06.420025",
+ "modified_by": "Administrator",
+ "module": "OroKalipso",
+ "name": "Procesar Oro Orokalipso",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

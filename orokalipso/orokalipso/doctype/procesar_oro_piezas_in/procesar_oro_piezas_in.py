@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class TransferirOroItemsRelacion(Document):
+class ProcesarOropiezasin(Document):
 	pass
